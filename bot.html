@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solidity Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Solidity Code</h1>
+<pre id="solidityCode">
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -104,3 +130,20 @@ contract ArbitrageBot {
         return IERC20(token).balanceOf(address(this));
     }
 }
+</pre>
+<button onclick="copyCode()">Copy Code</button>
+
+<script>
+    function copyCode() {
+        const codeElement = document.getElementById('solidityCode');
+        const code = codeElement.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert('Code copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
